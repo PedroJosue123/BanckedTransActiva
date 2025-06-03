@@ -5,6 +5,7 @@ E:\tecsup\6to_semestre\Desarrollo de aplicaciones Avanzado\Proyectos\TransActiva
 E:\tecsup\6to_semestre\Desarrollo de aplicaciones Avanzado\Proyectos\TransActiva\Domain\obj\Debug\net8.0\Domain.AssemblyInfoInputs.cache
 E:\tecsup\6to_semestre\Desarrollo de aplicaciones Avanzado\Proyectos\TransActiva\Domain\obj\Debug\net8.0\Domain.AssemblyInfo.cs
 E:\tecsup\6to_semestre\Desarrollo de aplicaciones Avanzado\Proyectos\TransActiva\Domain\obj\Debug\net8.0\Domain.csproj.CoreCompileInputs.cache
+E:\tecsup\6to_semestre\Desarrollo de aplicaciones Avanzado\Proyectos\TransActiva\Domain\obj\Debug\net8.0\Domain.sourcelink.json
 E:\tecsup\6to_semestre\Desarrollo de aplicaciones Avanzado\Proyectos\TransActiva\Domain\obj\Debug\net8.0\Domain.dll
 E:\tecsup\6to_semestre\Desarrollo de aplicaciones Avanzado\Proyectos\TransActiva\Domain\obj\Debug\net8.0\refint\Domain.dll
 E:\tecsup\6to_semestre\Desarrollo de aplicaciones Avanzado\Proyectos\TransActiva\Domain\obj\Debug\net8.0\Domain.pdb

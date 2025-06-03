@@ -1,10 +1,9 @@
-﻿using System.Security.Claims;
+﻿/*using System.Security.Claims;
+using Domain.Dtos;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
-using TransActiva.Dtos;
-using TransActiva.Interface;
-using TransActiva.Models;
+
 
 namespace TransActiva.Controllers;
 [ApiController]
@@ -37,4 +36,4 @@ public class PurchaserController : ControllerBase
         return Ok(orders);
     }
 
-}
+}*/

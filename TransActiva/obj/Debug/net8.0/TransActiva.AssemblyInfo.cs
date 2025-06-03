@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TransActiva")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+caad238f396094734df1abbd4eacb2b174ae7b79")]
 [assembly: System.Reflection.AssemblyProductAttribute("TransActiva")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TransActiva")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

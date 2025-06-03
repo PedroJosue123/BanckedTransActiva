@@ -1,17 +1,77 @@
 {
   "format": 1,
   "restore": {
-    "E:\\tecsup\\6to_semestre\\Desarrollo de aplicaciones Avanzado\\Proyectos\\TransActiva\\transactiva\\TransActiva.csproj": {}
+    "E:\\tecsup\\6to_semestre\\Desarrollo de aplicaciones Avanzado\\Proyectos\\TransActiva\\TransActiva\\TransActiva.csproj": {}
   },
   "projects": {
-    "E:\\tecsup\\6to_semestre\\Desarrollo de aplicaciones Avanzado\\Proyectos\\TransActiva\\transactiva\\TransActiva.csproj": {
+    "E:\\tecsup\\6to_semestre\\Desarrollo de aplicaciones Avanzado\\Proyectos\\TransActiva\\Application\\Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\tecsup\\6to_semestre\\Desarrollo de aplicaciones Avanzado\\Proyectos\\TransActiva\\transactiva\\TransActiva.csproj",
-        "projectName": "TransActiva",
-        "projectPath": "E:\\tecsup\\6to_semestre\\Desarrollo de aplicaciones Avanzado\\Proyectos\\TransActiva\\transactiva\\TransActiva.csproj",
+        "projectUniqueName": "E:\\tecsup\\6to_semestre\\Desarrollo de aplicaciones Avanzado\\Proyectos\\TransActiva\\Application\\Application.csproj",
+        "projectName": "Application",
+        "projectPath": "E:\\tecsup\\6to_semestre\\Desarrollo de aplicaciones Avanzado\\Proyectos\\TransActiva\\Application\\Application.csproj",
         "packagesPath": "C:\\Users\\AVATECC\\.nuget\\packages\\",
-        "outputPath": "E:\\tecsup\\6to_semestre\\Desarrollo de aplicaciones Avanzado\\Proyectos\\TransActiva\\transactiva\\obj\\",
+        "outputPath": "E:\\tecsup\\6to_semestre\\Desarrollo de aplicaciones Avanzado\\Proyectos\\TransActiva\\Application\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\AVATECC\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "E:\\tecsup\\6to_semestre\\Desarrollo de aplicaciones Avanzado\\Proyectos\\TransActiva\\Domain\\Domain.csproj": {
+                "projectPath": "E:\\tecsup\\6to_semestre\\Desarrollo de aplicaciones Avanzado\\Proyectos\\TransActiva\\Domain\\Domain.csproj"
+              },
+              "E:\\tecsup\\6to_semestre\\Desarrollo de aplicaciones Avanzado\\Proyectos\\TransActiva\\Infraestructure\\Infraestructure.csproj": {
+                "projectPath": "E:\\tecsup\\6to_semestre\\Desarrollo de aplicaciones Avanzado\\Proyectos\\TransActiva\\Infraestructure\\Infraestructure.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "E:\\tecsup\\6to_semestre\\Desarrollo de aplicaciones Avanzado\\Proyectos\\TransActiva\\Domain\\Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\tecsup\\6to_semestre\\Desarrollo de aplicaciones Avanzado\\Proyectos\\TransActiva\\Domain\\Domain.csproj",
+        "projectName": "Domain",
+        "projectPath": "E:\\tecsup\\6to_semestre\\Desarrollo de aplicaciones Avanzado\\Proyectos\\TransActiva\\Domain\\Domain.csproj",
+        "packagesPath": "C:\\Users\\AVATECC\\.nuget\\packages\\",
+        "outputPath": "E:\\tecsup\\6to_semestre\\Desarrollo de aplicaciones Avanzado\\Proyectos\\TransActiva\\Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\AVATECC\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -26,6 +86,165 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "E:\\tecsup\\6to_semestre\\Desarrollo de aplicaciones Avanzado\\Proyectos\\TransActiva\\Infraestructure\\Infraestructure.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\tecsup\\6to_semestre\\Desarrollo de aplicaciones Avanzado\\Proyectos\\TransActiva\\Infraestructure\\Infraestructure.csproj",
+        "projectName": "Infraestructure",
+        "projectPath": "E:\\tecsup\\6to_semestre\\Desarrollo de aplicaciones Avanzado\\Proyectos\\TransActiva\\Infraestructure\\Infraestructure.csproj",
+        "packagesPath": "C:\\Users\\AVATECC\\.nuget\\packages\\",
+        "outputPath": "E:\\tecsup\\6to_semestre\\Desarrollo de aplicaciones Avanzado\\Proyectos\\TransActiva\\Infraestructure\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\AVATECC\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "E:\\tecsup\\6to_semestre\\Desarrollo de aplicaciones Avanzado\\Proyectos\\TransActiva\\Domain\\Domain.csproj": {
+                "projectPath": "E:\\tecsup\\6to_semestre\\Desarrollo de aplicaciones Avanzado\\Proyectos\\TransActiva\\Domain\\Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "BCrypt.Net-Next": {
+              "target": "Package",
+              "version": "[4.0.3, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "Microsoft.Extensions.Configuration": {
+              "target": "Package",
+              "version": "[9.0.5, )"
+            },
+            "Microsoft.Extensions.Configuration.Abstractions": {
+              "target": "Package",
+              "version": "[9.0.5, )"
+            },
+            "Microsoft.Extensions.DependencyInjection": {
+              "target": "Package",
+              "version": "[9.0.5, )"
+            },
+            "Microsoft.IdentityModel.Tokens": {
+              "target": "Package",
+              "version": "[7.0.3, )"
+            },
+            "Pomelo.EntityFrameworkCore.MySql": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "System.IdentityModel.Tokens.Jwt": {
+              "target": "Package",
+              "version": "[7.0.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "E:\\tecsup\\6to_semestre\\Desarrollo de aplicaciones Avanzado\\Proyectos\\TransActiva\\TransActiva\\TransActiva.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\tecsup\\6to_semestre\\Desarrollo de aplicaciones Avanzado\\Proyectos\\TransActiva\\TransActiva\\TransActiva.csproj",
+        "projectName": "TransActiva",
+        "projectPath": "E:\\tecsup\\6to_semestre\\Desarrollo de aplicaciones Avanzado\\Proyectos\\TransActiva\\TransActiva\\TransActiva.csproj",
+        "packagesPath": "C:\\Users\\AVATECC\\.nuget\\packages\\",
+        "outputPath": "E:\\tecsup\\6to_semestre\\Desarrollo de aplicaciones Avanzado\\Proyectos\\TransActiva\\TransActiva\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\AVATECC\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "E:\\tecsup\\6to_semestre\\Desarrollo de aplicaciones Avanzado\\Proyectos\\TransActiva\\Application\\Application.csproj": {
+                "projectPath": "E:\\tecsup\\6to_semestre\\Desarrollo de aplicaciones Avanzado\\Proyectos\\TransActiva\\Application\\Application.csproj"
+              },
+              "E:\\tecsup\\6to_semestre\\Desarrollo de aplicaciones Avanzado\\Proyectos\\TransActiva\\Infraestructure\\Infraestructure.csproj": {
+                "projectPath": "E:\\tecsup\\6to_semestre\\Desarrollo de aplicaciones Avanzado\\Proyectos\\TransActiva\\Infraestructure\\Infraestructure.csproj"
+              }
+            }
           }
         },
         "warningProperties": {

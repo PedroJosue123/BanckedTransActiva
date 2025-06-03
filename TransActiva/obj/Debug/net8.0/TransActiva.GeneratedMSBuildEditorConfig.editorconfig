@@ -9,39 +9,39 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = TransActiva
 build_property.RootNamespace = TransActiva
-build_property.ProjectDir = E:\tecsup\6to_semestre\Desarrollo de aplicaciones Avanzado\Proyectos\TransActiva\transactiva\
+build_property.ProjectDir = E:\tecsup\6to_semestre\Desarrollo de aplicaciones Avanzado\Proyectos\TransActiva\TransActiva\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = E:\tecsup\6to_semestre\Desarrollo de aplicaciones Avanzado\Proyectos\TransActiva\transactiva
+build_property.MSBuildProjectDirectory = E:\tecsup\6to_semestre\Desarrollo de aplicaciones Avanzado\Proyectos\TransActiva\TransActiva
 build_property._RazorSourceGeneratorDebug = 
 
-[E:/tecsup/6to_semestre/Desarrollo de aplicaciones Avanzado/Proyectos/TransActiva/transactiva/Views/Home/Index.cshtml]
+[E:/tecsup/6to_semestre/Desarrollo de aplicaciones Avanzado/Proyectos/TransActiva/TransActiva/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/tecsup/6to_semestre/Desarrollo de aplicaciones Avanzado/Proyectos/TransActiva/transactiva/Views/Home/Privacy.cshtml]
+[E:/tecsup/6to_semestre/Desarrollo de aplicaciones Avanzado/Proyectos/TransActiva/TransActiva/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/tecsup/6to_semestre/Desarrollo de aplicaciones Avanzado/Proyectos/TransActiva/transactiva/Views/Shared/Error.cshtml]
+[E:/tecsup/6to_semestre/Desarrollo de aplicaciones Avanzado/Proyectos/TransActiva/TransActiva/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/tecsup/6to_semestre/Desarrollo de aplicaciones Avanzado/Proyectos/TransActiva/transactiva/Views/Shared/_ValidationScriptsPartial.cshtml]
+[E:/tecsup/6to_semestre/Desarrollo de aplicaciones Avanzado/Proyectos/TransActiva/TransActiva/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/tecsup/6to_semestre/Desarrollo de aplicaciones Avanzado/Proyectos/TransActiva/transactiva/Views/_ViewImports.cshtml]
+[E:/tecsup/6to_semestre/Desarrollo de aplicaciones Avanzado/Proyectos/TransActiva/TransActiva/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/tecsup/6to_semestre/Desarrollo de aplicaciones Avanzado/Proyectos/TransActiva/transactiva/Views/_ViewStart.cshtml]
+[E:/tecsup/6to_semestre/Desarrollo de aplicaciones Avanzado/Proyectos/TransActiva/TransActiva/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/tecsup/6to_semestre/Desarrollo de aplicaciones Avanzado/Proyectos/TransActiva/transactiva/Views/Shared/_Layout.cshtml]
+[E:/tecsup/6to_semestre/Desarrollo de aplicaciones Avanzado/Proyectos/TransActiva/TransActiva/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-i6h6s9w7xc

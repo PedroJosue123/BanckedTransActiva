@@ -6,6 +6,7 @@ E:\tecsup\6to_semestre\Desarrollo de aplicaciones Avanzado\Proyectos\TransActiva
 E:\tecsup\6to_semestre\Desarrollo de aplicaciones Avanzado\Proyectos\TransActiva\TransActiva\bin\Debug\net8.0\TransActiva.runtimeconfig.json
 E:\tecsup\6to_semestre\Desarrollo de aplicaciones Avanzado\Proyectos\TransActiva\TransActiva\bin\Debug\net8.0\TransActiva.dll
 E:\tecsup\6to_semestre\Desarrollo de aplicaciones Avanzado\Proyectos\TransActiva\TransActiva\bin\Debug\net8.0\TransActiva.pdb
+E:\tecsup\6to_semestre\Desarrollo de aplicaciones Avanzado\Proyectos\TransActiva\TransActiva\bin\Debug\net8.0\BCrypt.Net-Next.dll
 E:\tecsup\6to_semestre\Desarrollo de aplicaciones Avanzado\Proyectos\TransActiva\TransActiva\bin\Debug\net8.0\Humanizer.dll
 E:\tecsup\6to_semestre\Desarrollo de aplicaciones Avanzado\Proyectos\TransActiva\TransActiva\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 E:\tecsup\6to_semestre\Desarrollo de aplicaciones Avanzado\Proyectos\TransActiva\TransActiva\bin\Debug\net8.0\Microsoft.Bcl.AsyncInterfaces.dll
@@ -99,6 +100,7 @@ E:\tecsup\6to_semestre\Desarrollo de aplicaciones Avanzado\Proyectos\TransActiva
 E:\tecsup\6to_semestre\Desarrollo de aplicaciones Avanzado\Proyectos\TransActiva\TransActiva\obj\Debug\net8.0\TransActiva.MvcApplicationPartsAssemblyInfo.cache
 E:\tecsup\6to_semestre\Desarrollo de aplicaciones Avanzado\Proyectos\TransActiva\TransActiva\obj\Debug\net8.0\TransActiva.RazorAssemblyInfo.cache
 E:\tecsup\6to_semestre\Desarrollo de aplicaciones Avanzado\Proyectos\TransActiva\TransActiva\obj\Debug\net8.0\TransActiva.RazorAssemblyInfo.cs
+E:\tecsup\6to_semestre\Desarrollo de aplicaciones Avanzado\Proyectos\TransActiva\TransActiva\obj\Debug\net8.0\TransActiva.sourcelink.json
 E:\tecsup\6to_semestre\Desarrollo de aplicaciones Avanzado\Proyectos\TransActiva\TransActiva\obj\Debug\net8.0\staticwebassets.build.json
 E:\tecsup\6to_semestre\Desarrollo de aplicaciones Avanzado\Proyectos\TransActiva\TransActiva\obj\Debug\net8.0\staticwebassets.development.json
 E:\tecsup\6to_semestre\Desarrollo de aplicaciones Avanzado\Proyectos\TransActiva\TransActiva\obj\Debug\net8.0\staticwebassets\msbuild.TransActiva.Microsoft.AspNetCore.StaticWebAssets.props
@@ -115,4 +117,14 @@ E:\tecsup\6to_semestre\Desarrollo de aplicaciones Avanzado\Proyectos\TransActiva
 E:\tecsup\6to_semestre\Desarrollo de aplicaciones Avanzado\Proyectos\TransActiva\TransActiva\obj\Debug\net8.0\TransActiva.pdb
 E:\tecsup\6to_semestre\Desarrollo de aplicaciones Avanzado\Proyectos\TransActiva\TransActiva\obj\Debug\net8.0\TransActiva.genruntimeconfig.cache
 E:\tecsup\6to_semestre\Desarrollo de aplicaciones Avanzado\Proyectos\TransActiva\TransActiva\obj\Debug\net8.0\ref\TransActiva.dll
-E:\tecsup\6to_semestre\Desarrollo de aplicaciones Avanzado\Proyectos\TransActiva\TransActiva\bin\Debug\net8.0\BCrypt.Net-Next.dll
+E:\tecsup\6to_semestre\Desarrollo de aplicaciones Avanzado\Proyectos\TransActiva\TransActiva\bin\Debug\net8.0\Microsoft.Extensions.Configuration.dll
+E:\tecsup\6to_semestre\Desarrollo de aplicaciones Avanzado\Proyectos\TransActiva\TransActiva\bin\Debug\net8.0\Microsoft.Extensions.Configuration.Abstractions.dll
+E:\tecsup\6to_semestre\Desarrollo de aplicaciones Avanzado\Proyectos\TransActiva\TransActiva\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.dll
+E:\tecsup\6to_semestre\Desarrollo de aplicaciones Avanzado\Proyectos\TransActiva\TransActiva\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+E:\tecsup\6to_semestre\Desarrollo de aplicaciones Avanzado\Proyectos\TransActiva\TransActiva\bin\Debug\net8.0\Microsoft.Extensions.Primitives.dll
+E:\tecsup\6to_semestre\Desarrollo de aplicaciones Avanzado\Proyectos\TransActiva\TransActiva\bin\Debug\net8.0\Application.dll
+E:\tecsup\6to_semestre\Desarrollo de aplicaciones Avanzado\Proyectos\TransActiva\TransActiva\bin\Debug\net8.0\Domain.dll
+E:\tecsup\6to_semestre\Desarrollo de aplicaciones Avanzado\Proyectos\TransActiva\TransActiva\bin\Debug\net8.0\Infraestructure.dll
+E:\tecsup\6to_semestre\Desarrollo de aplicaciones Avanzado\Proyectos\TransActiva\TransActiva\bin\Debug\net8.0\Application.pdb
+E:\tecsup\6to_semestre\Desarrollo de aplicaciones Avanzado\Proyectos\TransActiva\TransActiva\bin\Debug\net8.0\Infraestructure.pdb
+E:\tecsup\6to_semestre\Desarrollo de aplicaciones Avanzado\Proyectos\TransActiva\TransActiva\bin\Debug\net8.0\Domain.pdb
