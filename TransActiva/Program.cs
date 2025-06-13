@@ -17,6 +17,8 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddApplicationServices(builder.Configuration);
 builder.Services.AddScoped<ILoginUser, LoginUser>();
 builder.Services.AddScoped<IRegisterUser, RegisterUser>();
+builder.Services.AddScoped<IOrder, Order>();
+builder.Services.AddScoped<IOrderRequests, OrderRequests>();
 
 
 var app = builder.Build();

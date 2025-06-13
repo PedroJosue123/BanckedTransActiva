@@ -1,6 +1,6 @@
 ﻿namespace Domain.Entities;
 
-public class UserProfile
+public class UserProfileDomain
 {
     public int Id { get; }
     public int UserId { get; }
@@ -12,7 +12,7 @@ public class UserProfile
     public string? Phone { get; }
     public string? Address { get; }
 
-    public UserProfile(int id, int userId, string? name, string? ruc, string? managerName, string? managerDni, string managerEmail, string? phone, string? address)
+    public UserProfileDomain(int id, int userId, string? name, string? ruc, string? managerName, string? managerDni, string managerEmail, string? phone, string? address)
     {
         Id = id;
         UserId = userId;

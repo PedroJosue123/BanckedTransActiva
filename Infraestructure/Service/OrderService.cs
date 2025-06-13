@@ -1,6 +1,7 @@
 ﻿
 
 
+/*
 using Domain.Dtos;
 using Domain.Interface;
 using Infraestructure.Models;
@@ -38,4 +39,4 @@ public class OrderService
         var orders = await _unitOfWork.Repository<order>().GetALLAsync();
         return orders.Where(o => o.UserId == userId);
     }
-}
+}*/

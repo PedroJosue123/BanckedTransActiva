@@ -11,7 +11,8 @@ using Microsoft.IdentityModel.Tokens;
 
 namespace TransActiva.Controllers;
 
-
+[ApiController]
+[Route("api/[controller]")]
 public class AuthController : ControllerBase
 {
     private readonly ILoginUser _loginUser;

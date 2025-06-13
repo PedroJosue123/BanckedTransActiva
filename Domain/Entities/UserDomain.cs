@@ -1,6 +1,6 @@
 ﻿namespace Domain.Entities;
 
-public class User
+public class UserDomain
 {
     public int Id { get; }
     public string Email { get; }
@@ -10,7 +10,8 @@ public class User
     public int FailedLoginAttempts { get; private set; }
     public DateTime? LockoutUntil { get; private set; }
 
-    public User(int id, string email, string passwordHash, DateTime createdAt, int userTypeId, int failedLoginAttempts = 0, DateTime? lockoutUntil = null)
+    public UserDomain(int id, string email, string passwordHash, DateTime createdAt, int userTypeId,
+        int failedLoginAttempts = 0, DateTime? lockoutUntil = null)
     {
         Id = id;
         Email = email;

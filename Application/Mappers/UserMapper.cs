@@ -6,11 +6,11 @@ namespace Application.Mappers;
 
 public class UserMapper
 {
-    public static User ToDomain(user entity) => new User(
+    public static UserDomain ToDomain(User entity) => new UserDomain(
         entity.UserId, entity.Email, entity.Password, entity.CreatedAt,
         entity.UserTypeId, entity.FailedLoginAttempts ?? 0, entity.LockoutUntil);
 
-    public static user ToEntity(User domain) => new user
+    public static User ToEntity(UserDomain domain) => new User
     {
         UserId = domain.Id,
         Email = domain.Email,

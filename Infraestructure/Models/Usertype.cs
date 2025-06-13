@@ -3,11 +3,11 @@ using System.Collections.Generic;
 
 namespace Infraestructure.Models;
 
-public partial class usertype
+public partial class Usertype
 {
     public int UserTypeId { get; set; }
 
     public string Name { get; set; } = null!;
 
-    public virtual ICollection<user> users { get; set; } = new List<user>();
+    public virtual ICollection<User> Users { get; set; } = new List<User>();
 }

@@ -1,0 +1,74 @@
+﻿using Application.ICaseUse;
+using Application.Mappers;
+using Domain.Dtos;
+using Domain.Entities;
+using Domain.Interface;
+using Infraestructure.Models;
+using Microsoft.EntityFrameworkCore;
+
+namespace Application.CaseUse;
+
+public class Order  (IUnitOfWork unitOfWork)  : IOrder
+{
+    public async Task<bool> RegisterOrder(RegisterOrderRequestDto requestDto)
+    {
+        
+        var usuariosEncontrados = await unitOfWork.Repository<User>()
+            .GetAll()
+            .CountAsync(u => u.UserId == requestDto.IdComprador || u.UserId == requestDto.Idproveedor);
+
+        if (usuariosEncontrados < 2)
+            throw new Exception("Uno o ambos usuarios no existen");
+
+       
+        var order = new OrderDomain(requestDto.Idproveedor, requestDto.IdComprador, 0, false);
+
+        var orderef = OrderMapper.ToEntity(order);
+
+        var detalles_producto = new ProductOrdenDomain( 0, requestDto.Producto, requestDto.Cantidad , requestDto.Descripcion, 
+            requestDto.DireccionEntrega, requestDto.FechaLlegadaAcordada, requestDto.NombreTransaccion , 0);
+
+        var detalleef = ProductMapper.ToEntity(detalles_producto);
+
+        var pago = new PaymentsDomain(0, null,  false, requestDto.Monto  );
+        var pagoef = PaymentMapper.ToEntity(pago);
+        
+        try
+        {
+            await unitOfWork.BeginTransactionAsync();
+
+            // Guardamos primero el usuario
+            await unitOfWork.Repository<Pago>().AddAsync(pagoef);
+            await unitOfWork.SaveChange();
+            
+            detalleef.IdPago = pagoef.IdPago;
+            
+            await unitOfWork.Repository<Pedidosproducto>().AddAsync(detalleef);
+            await unitOfWork.SaveChange();
+
+            // Asociamos el ID generado al perfil
+            orderef.IdPedidosProductos = detalleef.IdPedidosProductos;
+
+            // Guardamos el perfil
+            unitOfWork.Repository<Pedido>().AddAsync(orderef);
+            await unitOfWork.SaveChange();
+            
+            
+            await unitOfWork.CommitTransactionAsync();
+            return true;
+        }
+        catch
+        {
+            await unitOfWork.RollbackTransactionAsync();
+            throw new Exception("Datos Incompletos");
+
+        }
+        
+    }
+
+    
+
+
+
+   
+}

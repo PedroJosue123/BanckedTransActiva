@@ -5,7 +5,7 @@ namespace Application.Mappers;
 
 public static class UserProfileMapper
 {
-    public static userprofile ToEntity(UserProfile domain) => new userprofile
+    public static Userprofile ToEntity(UserProfileDomain domain) => new Userprofile
     {
         UserId = domain.UserId,
         Name = domain.Name,

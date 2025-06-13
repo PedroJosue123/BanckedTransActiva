@@ -22,7 +22,7 @@ public class LoginUser : ILoginUser
 
     public async Task<string?> Execute(LoginRequestDto request)
     {   
-        var userRepo = _unitOfWork.Repository<user>();
+        var userRepo = _unitOfWork.Repository<User>();
         var userEf = await userRepo.GetAll().Include(u => u.UserType).FirstOrDefaultAsync(u => u.Email == request.Email);
 
         if (userEf == null) throw new Exception("Usuario no encontrado");

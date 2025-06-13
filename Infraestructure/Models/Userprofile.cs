@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Infraestructure.Models;
 
-public partial class userprofile
+public partial class Userprofile
 {
     public int UserProfileId { get; set; }
 
@@ -23,5 +23,5 @@ public partial class userprofile
 
     public string? Address { get; set; }
 
-    public virtual user User { get; set; } = null!;
+    public virtual User User { get; set; } = null!;
 }
