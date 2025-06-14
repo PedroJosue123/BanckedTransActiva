@@ -10,7 +10,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace TransActiva.Controllers;
 [ApiController]
 [Route("api/[controller]")]
-public class SellerController (IOrderRequests orderRequests,IOrder order): ControllerBase
+public class SellerController (IOrderRequests orderRequests,IOrder order, ISendOrder sendOrder): ControllerBase
 {
    
     
@@ -52,7 +52,7 @@ public class SellerController (IOrderRequests orderRequests,IOrder order): Contr
     
     [Authorize(Roles = "Vendedor")]
     
-    [HttpPost("Preparar Producto")]
+    [HttpPost("PrepararProducto")]
     public async Task<IActionResult> PrepararProducto(int id, [FromBody] PreparationOrderDto preparationOrderDto )
     {
         try
@@ -68,4 +68,40 @@ public class SellerController (IOrderRequests orderRequests,IOrder order): Contr
         }
     }
     
+    [Authorize(Roles = "Vendedor")]
+    
+    [HttpPost("EnviarProducto")]
+    public async Task<IActionResult> EnviarProducto(int id, [FromBody] SendProductDto sendProductDto )
+    {
+        try
+        {
+            var registro = await sendOrder.EnviarProducto(id, sendProductDto);
+            return Ok ( registro );
+            
+        }
+        
+        catch (Exception ex)
+        {
+            return NotFound(new { message = ex.Message });
+        }
+    }
+    
+    
+    [Authorize(Roles = "Vendedor")]
+    
+    [HttpPost("ConfirmarEnvio")]
+    public async Task<IActionResult> ConfirmarEnvio(int id )
+    {
+        try
+        {
+            var registro = await sendOrder.ConfirmarEnvio(id);
+            return Ok ( registro );
+            
+        }
+        
+        catch (Exception ex)
+        {
+            return NotFound(new { message = ex.Message });
+        }
+    }
 }

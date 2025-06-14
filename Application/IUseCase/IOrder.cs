@@ -8,4 +8,6 @@ public interface IOrder
 {
     Task<int> RegisterOrder(RegisterOrderRequestDto requestDto);
     Task<bool> PreparetedOrder(int id, PreparationOrderDto preparationOrderDto);
+
+    Task<List<GetOrderDomain>> MostrarOrder(int id);
 }

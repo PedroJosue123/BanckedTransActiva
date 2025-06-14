@@ -89,6 +89,22 @@ public class Order  (IUnitOfWork unitOfWork)  : IOrder
     }
 
 
+    public async Task<List<GetOrderDomain>> MostrarOrder(int id)
+    {
 
 
+        var pedido = await unitOfWork.Repository<Pedido>()
+            .GetAll().Include(p => p.IdPedidosProductosNavigation) // Incluye productos del pedido
+            .ThenInclude(pp => pp.IdPagoNavigation) // Incluye pago dentro del producto
+            .Include(p => p.IdProveedorNavigation)
+            .ThenInclude(pp => pp.Userprofile) // Cliente// Proveedor
+            .Where(u => u.IdComprador == id).ToListAsync();
+            
+        if (!pedido.Any()) throw new Exception("No hay ni mierda");
+        var pedidosDominio = pedido.Select(p => GetOrderMapper.ToDomain(p)).ToList();
+
+        return pedidosDominio;
+
+
+    }
 }

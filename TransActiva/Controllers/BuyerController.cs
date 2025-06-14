@@ -63,4 +63,21 @@ public class BuyerController (IOrder order, IPaymentOrder paymentOrder) : Contro
         }
     }
     
+    [Authorize(Roles = "Comprador")]
+    [HttpGet("{id}")]
+    public async Task<IActionResult> MostrarOrder(int id)
+    {
+        try
+        {
+            var registro = await order.MostrarOrder(id);
+            return Ok (new {registro });
+            
+        }
+        
+        catch (Exception ex)
+        {
+            return NotFound(new { message = ex.Message });
+        }
+    }
+    
 }
