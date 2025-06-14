@@ -66,6 +66,27 @@ public class Order  (IUnitOfWork unitOfWork)  : IOrder
         
     }
 
+    public async Task<List<GetPrepationDomain>> GetPreparationOrder(int id)
+    {
+        var pedido = await unitOfWork.Repository<Pedido>()
+            .GetAll()
+            .Include(p => p.IdPedidosProductosNavigation)
+            .ThenInclude(pp => pp.IdPagoNavigation)
+            .Include(p => p.IdPedidosProductosNavigation)
+            .ThenInclude(pp => pp.IdPreparacionNavigation)
+            .ThenInclude(prep => prep.IdEnvioNavigation) // Muy importante
+            .Include(p => p.IdCompradorNavigation)
+            .ThenInclude(c => c.Userprofile)
+            .Where(u => u.IdProveedor == id)
+            .ToListAsync();
+
+        
+        if (!pedido.Any()) throw new Exception("No hay ni mierda");
+        var pedidosDominio = pedido.Select(p => GetPreparationMapper.ToDomain(p)).ToList();
+
+        return pedidosDominio;
+    }
+
     public async Task<bool> PreparetedOrder(int id, PreparationOrderDto preparationOrderDto)
     {
 
@@ -88,6 +109,15 @@ public class Order  (IUnitOfWork unitOfWork)  : IOrder
 
     }
 
+    public async Task<bool> VerSiOrderAceptado(int id)
+    {
+        var pedido = await unitOfWork.Repository<Pedido>().GetByIdAsync(id);
+        
+        if ((bool)!pedido.Estado) throw new Exception("No fue pagado");
+
+        return true;
+
+    }
 
     public async Task<List<GetOrderDomain>> MostrarOrder(int id)
     {

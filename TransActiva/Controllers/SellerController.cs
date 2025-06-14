@@ -15,7 +15,7 @@ public class SellerController (IOrderRequests orderRequests,IOrder order, ISendO
    
     
     [Authorize(Roles = "Vendedor")]
-    [HttpGet("{id}")]
+    [HttpGet("ObtenerSolicitudes/{id}")]
    
     public async Task<IActionResult> GetPedidoById(int id)
     {
@@ -34,7 +34,7 @@ public class SellerController (IOrderRequests orderRequests,IOrder order, ISendO
     
     [Authorize(Roles = "Vendedor")]
     
-    [HttpPut("{id}")]
+    [HttpPut("ActivarSolicitud/{id}")]
     public async Task<IActionResult> ActivarSolicitud(int id)
     {
         try
@@ -49,6 +49,43 @@ public class SellerController (IOrderRequests orderRequests,IOrder order, ISendO
             return NotFound(new { message = ex.Message });
         }
     }
+    
+    [Authorize(Roles = "Vendedor")]
+    
+    [HttpGet("Confirmarsipago/{id}")]
+    public async Task<IActionResult> Versiapagado(int id)
+    {
+        try
+        {
+            var registro = await orderRequests.VerSiPago(id);
+            return Ok ( registro );
+            
+        }
+        
+        catch (Exception ex)
+        {
+            return NotFound(new { message = ex.Message });
+        }
+    }
+    
+    [Authorize(Roles = "Vendedor")]
+    
+    [HttpGet("VerlistaPreparacion{id}")]
+    public async Task<IActionResult> listadepreparacion(int id)
+    {
+        try
+        {
+            var registro = await order.GetPreparationOrder(id);
+            return Ok ( registro );
+            
+        }
+        
+        catch (Exception ex)
+        {
+            return NotFound(new { message = ex.Message });
+        }
+    }
+    
     
     [Authorize(Roles = "Vendedor")]
     

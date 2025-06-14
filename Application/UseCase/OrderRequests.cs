@@ -31,7 +31,7 @@ public class OrderRequests (IUnitOfWork unitOfWork) : IOrderRequests
 
     }
     
-    public async Task<bool> AceptarSolicitud(int id)
+    public async Task<int> AceptarSolicitud(int id)
     {
         var pedido = await unitOfWork.Repository<Pedido>().GetByIdAsync(id);
 
@@ -42,6 +42,21 @@ public class OrderRequests (IUnitOfWork unitOfWork) : IOrderRequests
         pedido.Estado = true;
 
         await unitOfWork.SaveChange();
-        return true;
+        
+        return pedido.IdPedido;
+    }
+
+    public async Task<int> VerSiPago(int id)
+    {
+        var pedido = await unitOfWork.Repository<Pedido>()
+                .GetAll()
+                .Include(p => p.IdPedidosProductosNavigation)
+                .ThenInclude(pp => pp.IdPagoNavigation)
+                .FirstOrDefaultAsync(u => u.IdPedido == id );
+            ;
+            
+        if(!(bool)pedido.IdPedidosProductosNavigation.IdPagoNavigation.Estado) throw new Exception("No ha pagado");
+
+        return pedido.IdPedidosProductosNavigation.IdPedidosProductos;
     }
 }
