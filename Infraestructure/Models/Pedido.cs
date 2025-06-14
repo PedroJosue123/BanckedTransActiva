@@ -15,9 +15,9 @@ public partial class Pedido
 
     public bool? Estado { get; set; }
 
-    public virtual User? IdCompradorNavigation { get; set; }
+    public virtual User IdCompradorNavigation { get; set; } = null!;
 
-    public virtual Pedidosproducto? IdPedidosProductosNavigation { get; set; }
+    public virtual Pedidosproducto IdPedidosProductosNavigation { get; set; } = null!;
 
-    public virtual User? IdProveedorNavigation { get; set; }
+    public virtual User IdProveedorNavigation { get; set; } = null!;
 }

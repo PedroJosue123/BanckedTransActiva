@@ -6,6 +6,6 @@ namespace Application.ICaseUse;
 
 public interface IOrder
 {
-    Task<bool> RegisterOrder(RegisterOrderRequestDto requestDto);
-    
+    Task<int> RegisterOrder(RegisterOrderRequestDto requestDto);
+    Task<bool> PreparetedOrder(int id, PreparationOrderDto preparationOrderDto);
 }

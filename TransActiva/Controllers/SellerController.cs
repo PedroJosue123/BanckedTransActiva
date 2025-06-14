@@ -12,22 +12,7 @@ namespace TransActiva.Controllers;
 [Route("api/[controller]")]
 public class SellerController (IOrderRequests orderRequests,IOrder order): ControllerBase
 {
-    [Authorize(Roles = "Vendedor")]
-    [HttpGet("VendedorSolicitudes")]
-    public async Task<IActionResult> Solicitud()
-    {
-        try
-        {
-            var registro = await orderRequests.GetSolicitudes();
-            return Ok ( registro );
-            
-        }
-        
-        catch (Exception ex)
-        {
-            return NotFound(new { message = ex.Message });
-        }
-    }
+   
     
     [Authorize(Roles = "Vendedor")]
     [HttpGet("{id}")]
@@ -36,7 +21,7 @@ public class SellerController (IOrderRequests orderRequests,IOrder order): Contr
     {
         try
         {
-            var registro = await orderRequests.GetAceptarSolicitud(id);
+            var registro = await orderRequests.GetSolicitud(id);
             return Ok ( registro );
             
         }
@@ -55,6 +40,24 @@ public class SellerController (IOrderRequests orderRequests,IOrder order): Contr
         try
         {
             var registro = await orderRequests.AceptarSolicitud(id);
+            return Ok ( registro );
+            
+        }
+        
+        catch (Exception ex)
+        {
+            return NotFound(new { message = ex.Message });
+        }
+    }
+    
+    [Authorize(Roles = "Vendedor")]
+    
+    [HttpPost("Preparar Producto")]
+    public async Task<IActionResult> PrepararProducto(int id, [FromBody] PreparationOrderDto preparationOrderDto )
+    {
+        try
+        {
+            var registro = await order.PreparetedOrder(id, preparationOrderDto );
             return Ok ( registro );
             
         }

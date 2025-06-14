@@ -7,7 +7,7 @@ public partial class Preparacion
 {
     public int IdPreparacion { get; set; }
 
-    public string? Estado { get; set; }
+    public bool? Estado { get; set; }
 
     public string ComoEnvia { get; set; } = null!;
 

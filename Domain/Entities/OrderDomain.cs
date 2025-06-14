@@ -26,4 +26,6 @@ public class OrderDomain
         IdPedidosProductos = idPedidosProductos;
         Estado = estado;
     }
+    
+    public void ChangeEstado() => Estado = true;
 }

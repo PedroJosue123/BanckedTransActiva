@@ -10,7 +10,7 @@ namespace Application.CaseUse;
 
 public class Order  (IUnitOfWork unitOfWork)  : IOrder
 {
-    public async Task<bool> RegisterOrder(RegisterOrderRequestDto requestDto)
+    public async Task<int> RegisterOrder(RegisterOrderRequestDto requestDto)
     {
         
         var usuariosEncontrados = await unitOfWork.Repository<User>()
@@ -29,7 +29,7 @@ public class Order  (IUnitOfWork unitOfWork)  : IOrder
             requestDto.DireccionEntrega, requestDto.FechaLlegadaAcordada, requestDto.NombreTransaccion , 0);
 
         var detalleef = ProductMapper.ToEntity(detalles_producto);
-
+        detalleef.FechaSolicitada =  DateTime.Now;
         var pago = new PaymentsDomain(0, null,  false, requestDto.Monto  );
         var pagoef = PaymentMapper.ToEntity(pago);
         
@@ -50,12 +50,12 @@ public class Order  (IUnitOfWork unitOfWork)  : IOrder
             orderef.IdPedidosProductos = detalleef.IdPedidosProductos;
 
             // Guardamos el perfil
-            unitOfWork.Repository<Pedido>().AddAsync(orderef);
+            await unitOfWork.Repository<Pedido>().AddAsync(orderef);
             await unitOfWork.SaveChange();
             
             
             await unitOfWork.CommitTransactionAsync();
-            return true;
+            return orderef.IdPedido;
         }
         catch
         {
@@ -66,9 +66,29 @@ public class Order  (IUnitOfWork unitOfWork)  : IOrder
         
     }
 
+    public async Task<bool> PreparetedOrder(int id, PreparationOrderDto preparationOrderDto)
+    {
+
+        var preparacion = new PreparationOrderDomain(0 ,preparationOrderDto.ComoEnvia ,preparationOrderDto.Detalles);
+
+        var preparacionEntity = PreparationOrderMapper.ToEntity(preparacion);
+        await unitOfWork.Repository<Preparacion>().AddAsync(preparacionEntity);
+        
+        await unitOfWork.SaveChange();
     
+        var pediproducto =  await unitOfWork.Repository<Pedidosproducto>().GetByIdAsync(id);
+        
+        
+
+        pediproducto.IdPreparacion = preparacionEntity.IdPreparacion;
+
+        await unitOfWork.SaveChange();
+
+        return true;
+
+    }
 
 
 
-   
+
 }

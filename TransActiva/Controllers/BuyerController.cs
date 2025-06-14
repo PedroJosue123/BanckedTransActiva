@@ -9,7 +9,7 @@ namespace TransActiva.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
-public class BuyerController (IOrder order) : ControllerBase
+public class BuyerController (IOrder order, IPaymentOrder paymentOrder) : ControllerBase
 {
    
     [Authorize(Roles = "Comprador")]
@@ -19,7 +19,41 @@ public class BuyerController (IOrder order) : ControllerBase
         try
         {
             var registro = await order.RegisterOrder(registerOrderRequestDto);
+            return Ok (new { Idpedido = registro });
+            
+        }
+        
+        catch (Exception ex)
+        {
+            return NotFound(new { message = ex.Message });
+        }
+    }
+    
+    [Authorize(Roles = "Comprador")]
+    [HttpPost("VistaPagar")]
+    public async Task<IActionResult> GetPayment(int id)
+    {
+        try
+        {
+            var registro = await paymentOrder.GeyDataPayment(id);
             return Ok (new { registered = registro });
+            
+        }
+        
+        catch (Exception ex)
+        {
+            return NotFound(new { message = ex.Message });
+        }
+    }
+    
+    [Authorize(Roles = "Comprador")]
+    [HttpPost("Pagar")]
+    public async Task<IActionResult> Payment(int id, [FromBody] PaymentCartDto paymentCartDto)
+    {
+        try
+        {
+            var registro = await paymentOrder.Payment(id, paymentCartDto);
+            return Ok (new {registro });
             
         }
         

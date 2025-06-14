@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "CJsjThcfPRE=",
+  "dgSpecHash": "+BQ88HGijWw7nnZjThUimBiRQJO+z4VTnOG0TOUCPptxziILeYA/wUYEQXGJ2Gor07FgRz0Ktvf04d1r1czRjA==",
   "success": true,
-  "projectFilePath": "E:\\tecsup\\6to_semestre\\Desarrollo de aplicaciones Avanzado\\Proyectos\\TransActiva\\TransActiva\\TransActiva.csproj",
+  "projectFilePath": "E:\\tecsup\\6to_semestre\\Desarrollo de aplicaciones Avanzado\\Proyectos\\TransActiva\\transactiva\\TransActiva.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\AVATECC\\.nuget\\packages\\bcrypt.net-next\\4.0.3\\bcrypt.net-next.4.0.3.nupkg.sha512",
     "C:\\Users\\AVATECC\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",

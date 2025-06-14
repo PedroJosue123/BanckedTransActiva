@@ -5,8 +5,8 @@ namespace Application.ICaseUse;
 
 public interface IOrderRequests
 {
-    Task<List<PedidoDto>> GetSolicitudes();
-    Task<OrderRequestDomain> GetAceptarSolicitud(int id);
+
+    Task<List<OrderGetRequestDomain>> GetSolicitud(int id);
     
     Task<bool> AceptarSolicitud(int id);
 }

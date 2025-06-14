@@ -1,7 +1,7 @@
 {
   "format": 1,
   "restore": {
-    "E:\\tecsup\\6to_semestre\\Desarrollo de aplicaciones Avanzado\\Proyectos\\TransActiva\\TransActiva\\TransActiva.csproj": {}
+    "E:\\tecsup\\6to_semestre\\Desarrollo de aplicaciones Avanzado\\Proyectos\\TransActiva\\transactiva\\TransActiva.csproj": {}
   },
   "projects": {
     "E:\\tecsup\\6to_semestre\\Desarrollo de aplicaciones Avanzado\\Proyectos\\TransActiva\\Application\\Application.csproj": {
@@ -216,14 +216,14 @@
         }
       }
     },
-    "E:\\tecsup\\6to_semestre\\Desarrollo de aplicaciones Avanzado\\Proyectos\\TransActiva\\TransActiva\\TransActiva.csproj": {
+    "E:\\tecsup\\6to_semestre\\Desarrollo de aplicaciones Avanzado\\Proyectos\\TransActiva\\transactiva\\TransActiva.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\tecsup\\6to_semestre\\Desarrollo de aplicaciones Avanzado\\Proyectos\\TransActiva\\TransActiva\\TransActiva.csproj",
+        "projectUniqueName": "E:\\tecsup\\6to_semestre\\Desarrollo de aplicaciones Avanzado\\Proyectos\\TransActiva\\transactiva\\TransActiva.csproj",
         "projectName": "TransActiva",
-        "projectPath": "E:\\tecsup\\6to_semestre\\Desarrollo de aplicaciones Avanzado\\Proyectos\\TransActiva\\TransActiva\\TransActiva.csproj",
+        "projectPath": "E:\\tecsup\\6to_semestre\\Desarrollo de aplicaciones Avanzado\\Proyectos\\TransActiva\\transactiva\\TransActiva.csproj",
         "packagesPath": "C:\\Users\\AVATECC\\.nuget\\packages\\",
-        "outputPath": "E:\\tecsup\\6to_semestre\\Desarrollo de aplicaciones Avanzado\\Proyectos\\TransActiva\\TransActiva\\obj\\",
+        "outputPath": "E:\\tecsup\\6to_semestre\\Desarrollo de aplicaciones Avanzado\\Proyectos\\TransActiva\\transactiva\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\AVATECC\\AppData\\Roaming\\NuGet\\NuGet.Config"

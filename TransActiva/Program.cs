@@ -19,6 +19,7 @@ builder.Services.AddScoped<ILoginUser, LoginUser>();
 builder.Services.AddScoped<IRegisterUser, RegisterUser>();
 builder.Services.AddScoped<IOrder, Order>();
 builder.Services.AddScoped<IOrderRequests, OrderRequests>();
+builder.Services.AddScoped<IPaymentOrder, PaymentOrder>();
 
 
 var app = builder.Build();
