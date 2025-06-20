@@ -14,7 +14,6 @@ public class GetPrepationDomain
 
     public string Descripcion { get; set; } = null!;
     
-    
 
     public string DireccionEntrega { get; set; } = null!;
     

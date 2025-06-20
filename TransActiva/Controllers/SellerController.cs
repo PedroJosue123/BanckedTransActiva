@@ -15,13 +15,18 @@ public class SellerController (IOrderRequests orderRequests,IOrder order, ISendO
    
     
     [Authorize(Roles = "Vendedor")]
-    [HttpGet("ObtenerSolicitudes/{id}")]
+    [HttpGet("ObtenerSolicitudes/")]
    
-    public async Task<IActionResult> GetPedidoById(int id)
+    public async Task<IActionResult> GetSolicitud()
     {
         try
         {
-            var registro = await orderRequests.GetSolicitud(id);
+            var userIdClaim = User.FindFirst(ClaimTypes.NameIdentifier);
+            if (userIdClaim == null)
+                return Unauthorized("No se encontró el ID de usuario en el token.");
+
+            int userId = int.Parse(userIdClaim.Value);
+            var registro = await orderRequests.GetSolicitud(userId);
             return Ok ( registro );
             
         }

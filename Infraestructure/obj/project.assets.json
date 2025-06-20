@@ -2603,11 +2603,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\tecsup\\6to_semestre\\Desarrollo de aplicaciones Avanzado\\Proyectos\\TransActiva\\Infraestructure\\Infraestructure.csproj",
+      "projectUniqueName": "E:\\tecsup\\6to_semestre\\Desarrollo de aplicaciones Avanzado\\Proyectos\\TransActiva\\infraestructure\\Infraestructure.csproj",
       "projectName": "Infraestructure",
-      "projectPath": "E:\\tecsup\\6to_semestre\\Desarrollo de aplicaciones Avanzado\\Proyectos\\TransActiva\\Infraestructure\\Infraestructure.csproj",
+      "projectPath": "E:\\tecsup\\6to_semestre\\Desarrollo de aplicaciones Avanzado\\Proyectos\\TransActiva\\infraestructure\\Infraestructure.csproj",
       "packagesPath": "C:\\Users\\AVATECC\\.nuget\\packages\\",
-      "outputPath": "E:\\tecsup\\6to_semestre\\Desarrollo de aplicaciones Avanzado\\Proyectos\\TransActiva\\Infraestructure\\obj\\",
+      "outputPath": "E:\\tecsup\\6to_semestre\\Desarrollo de aplicaciones Avanzado\\Proyectos\\TransActiva\\infraestructure\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\AVATECC\\AppData\\Roaming\\NuGet\\NuGet.Config"

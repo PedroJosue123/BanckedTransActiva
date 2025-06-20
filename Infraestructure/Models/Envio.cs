@@ -9,6 +9,8 @@ public partial class Envio
 
     public bool? Estado { get; set; }
 
+    public bool? Llegada { get; set; }
+
     public string NombreEmpresa { get; set; } = null!;
 
     public string RucEmpresa { get; set; } = null!;

@@ -67,6 +67,9 @@ public partial class TransactivaDbContext : DbContext
             entity.Property(e => e.DireccionRecojo).HasMaxLength(255);
             entity.Property(e => e.Estado).HasDefaultValueSql("'0'");
             entity.Property(e => e.FechaLlegada).HasColumnType("datetime");
+            entity.Property(e => e.Llegada)
+                .HasDefaultValueSql("'0'")
+                .HasColumnName("LLegada");
             entity.Property(e => e.NombreEmpresa).HasMaxLength(100);
             entity.Property(e => e.NroGuia).HasMaxLength(50);
             entity.Property(e => e.NumeroTelefonico).HasMaxLength(20);

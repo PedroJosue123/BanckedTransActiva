@@ -2,8 +2,6 @@
 
 public class RegisterOrderRequestDto
 {
-    public int IdComprador { get; set; }
-    
     public string Producto { get; set; } = null!;
 
     public int Cantidad { get; set; }

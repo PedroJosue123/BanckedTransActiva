@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "8ep1ZcIq0csKAjKG9Df/k8C2oqze2gPzLg6lZhVUaWBekUdLdOUNlG+ztOLAfrJibhG4WgvR+92T5UKDPzzbUw==",
+  "dgSpecHash": "DT3MAmw7WvowjWV1ng5QRdEQrjGAQxCFSUSM2bfjrqKcFP7bkAeF4VHCuR3Let/S1TemwWEPa1ABvEstfoV0WA==",
   "success": true,
-  "projectFilePath": "E:\\tecsup\\6to_semestre\\Desarrollo de aplicaciones Avanzado\\Proyectos\\TransActiva\\Infraestructure\\Infraestructure.csproj",
+  "projectFilePath": "E:\\tecsup\\6to_semestre\\Desarrollo de aplicaciones Avanzado\\Proyectos\\TransActiva\\infraestructure\\Infraestructure.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\AVATECC\\.nuget\\packages\\bcrypt.net-next\\4.0.3\\bcrypt.net-next.4.0.3.nupkg.sha512",
     "C:\\Users\\AVATECC\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",

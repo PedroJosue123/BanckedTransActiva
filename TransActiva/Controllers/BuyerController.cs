@@ -1,4 +1,5 @@
-﻿using Application.CaseUse;
+﻿using System.Security.Claims;
+using Application.CaseUse;
 using Application.ICaseUse;
 using Domain.Dtos;
 using Microsoft.AspNetCore.Authorization;
@@ -18,7 +19,12 @@ public class BuyerController (IOrder order, IPaymentOrder paymentOrder) : Contro
     {
         try
         {
-            var registro = await order.RegisterOrder(registerOrderRequestDto);
+            var userIdClaim = User.FindFirst(ClaimTypes.NameIdentifier);
+            if (userIdClaim == null)
+                return Unauthorized("No se encontró el ID de usuario en el token.");
+
+            int userId = int.Parse(userIdClaim.Value);
+            var registro = await order.RegisterOrder(registerOrderRequestDto , userId);
             return Ok (new { Idpedido = registro });
             
         }
@@ -81,12 +87,19 @@ public class BuyerController (IOrder order, IPaymentOrder paymentOrder) : Contro
     }
     
     [Authorize(Roles = "Comprador")]
-    [HttpGet("Mostarlospedidos{id}")]
-    public async Task<IActionResult> MostrarOrder(int id)
+    [HttpGet("Mostarlospedidos")]
+    public async Task<IActionResult> MostrarOrder()
+    
     {
         try
         {
-            var registro = await order.MostrarOrder(id);
+            var userIdClaim = User.FindFirst(ClaimTypes.NameIdentifier);
+            if (userIdClaim == null)
+                return Unauthorized("No se encontró el ID de usuario en el token.");
+
+            int userId = int.Parse(userIdClaim.Value);
+
+            var registro = await order.MostrarOrder(userId);
             return Ok (new {registro });
             
         }

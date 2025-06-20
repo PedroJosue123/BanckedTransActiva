@@ -43,6 +43,7 @@ public static class ServiceRegistrationExtensions
             });
         });
         services.AddInfrastructureServices(configuration);
+        
         // Configuración de autenticación JWT
         services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
             .AddJwtBearer(options =>

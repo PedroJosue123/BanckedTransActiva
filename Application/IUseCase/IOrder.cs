@@ -6,7 +6,7 @@ namespace Application.ICaseUse;
 
 public interface IOrder
 {
-    Task<int> RegisterOrder(RegisterOrderRequestDto requestDto);
+    Task<int> RegisterOrder(RegisterOrderRequestDto requestDto, int id);
     Task<List<GetPrepationDomain>> GetPreparationOrder(int id);
     Task<bool> PreparetedOrder(int id, PreparationOrderDto preparationOrderDto);
     Task<bool> VerSiOrderAceptado(int id);

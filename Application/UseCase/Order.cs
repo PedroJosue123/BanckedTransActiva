@@ -1,4 +1,5 @@
-﻿using Application.ICaseUse;
+﻿using System.Security.Claims;
+using Application.ICaseUse;
 using Application.Mappers;
 using Domain.Dtos;
 using Domain.Entities;
@@ -10,18 +11,18 @@ namespace Application.CaseUse;
 
 public class Order  (IUnitOfWork unitOfWork)  : IOrder
 {
-    public async Task<int> RegisterOrder(RegisterOrderRequestDto requestDto)
+    public async Task<int> RegisterOrder(RegisterOrderRequestDto requestDto, int id)
     {
         
         var usuariosEncontrados = await unitOfWork.Repository<User>()
             .GetAll()
-            .CountAsync(u => u.UserId == requestDto.IdComprador || u.UserId == requestDto.Idproveedor);
+            .CountAsync(u => u.UserId == id || u.UserId == requestDto.Idproveedor);
 
         if (usuariosEncontrados < 2)
             throw new Exception("Uno o ambos usuarios no existen");
 
        
-        var order = new OrderDomain(requestDto.Idproveedor, requestDto.IdComprador, 0, false);
+        var order = new OrderDomain(requestDto.Idproveedor, id, 0, false);
 
         var orderef = OrderMapper.ToEntity(order);
 
@@ -68,10 +69,12 @@ public class Order  (IUnitOfWork unitOfWork)  : IOrder
 
     public async Task<List<GetPrepationDomain>> GetPreparationOrder(int id)
     {
+       
+           
         var pedido = await unitOfWork.Repository<Pedido>()
             .GetAll()
             .Include(p => p.IdPedidosProductosNavigation)
-            .ThenInclude(pp => pp.IdPagoNavigation)
+            .ThenInclude(pp => pp.IdPagoNavigation.Monto)
             .Include(p => p.IdPedidosProductosNavigation)
             .ThenInclude(pp => pp.IdPreparacionNavigation)
             .ThenInclude(prep => prep.IdEnvioNavigation) // Muy importante
@@ -113,7 +116,7 @@ public class Order  (IUnitOfWork unitOfWork)  : IOrder
     {
         var pedido = await unitOfWork.Repository<Pedido>().GetByIdAsync(id);
         
-        if ((bool)!pedido.Estado) throw new Exception("No fue pagado");
+        if ((bool)!pedido.Estado) throw new Exception("No fue aceptado");
 
         return true;
 
@@ -137,4 +140,19 @@ public class Order  (IUnitOfWork unitOfWork)  : IOrder
 
 
     }
+
+
+
+    public async Task<List<GetPreparationOrderDomain>>  MostrarPedidosPreparados(int id)
+    {
+        var pedidosPreparados = await unitOfWork.Repository<Pedido>()
+            .GetAll().Where(u => u.IdProveedor == id && u.IdPedidosProductosNavigation.IdPreparacionNavigation.Estado == true )
+            .Include(p => p.IdPedidosProductosNavigation.IdPreparacionNavigation).ToListAsync();
+        
+        if (!pedidosPreparados.Any()) throw new Exception("No hay nada");
+        var pedidosDominio = pedidosPreparados.Select(p => GetPreparationOrderMapper.ToDomain(p)).ToList();
+
+        return pedidosDominio;
+    }
+
 }

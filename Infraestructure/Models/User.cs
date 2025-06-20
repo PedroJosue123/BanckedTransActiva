@@ -22,7 +22,7 @@ public partial class User
     public virtual ICollection<Pedido> PedidoIdCompradorNavigations { get; set; } = new List<Pedido>();
 
     public virtual ICollection<Pedido> PedidoIdProveedorNavigations { get; set; } = new List<Pedido>();
-    
+
     public virtual Usertype UserType { get; set; } = null!;
 
     public virtual Userprofile? Userprofile { get; set; }

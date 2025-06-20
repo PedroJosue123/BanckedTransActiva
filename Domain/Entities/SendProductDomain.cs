@@ -14,9 +14,9 @@ namespace Domain.Entities
         public DateTime FechaLlegada { get; set; }
         public string NroGuia { get; set; } = null!;
         
-     
-
-       
+        public bool? Estado { get; private set; }
+        
+        
 
         public SendProductDomain(
             int idSend,
@@ -28,6 +28,7 @@ namespace Domain.Entities
             string direccionRecojo,
             DateTime fechaLlegada,
             string nroGuia
+          
             
         )
         {
@@ -54,6 +55,7 @@ namespace Domain.Entities
             FechaLlegada = fechaLlegada;
             NroGuia = nroGuia;
            
+
         }
     }
 }

@@ -15,7 +15,8 @@ public class SendProductMapper
         DireccionRecojo = domain.DireccionRecojo,
         FechaLlegada = domain.FechaLlegada,
         NombreEmpresa = domain.NombreEmpresa,
-        NroGuia = domain.NroGuia
+        NroGuia = domain.NroGuia,
+        Estado = true
     };
     
  
