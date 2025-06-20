@@ -17,7 +17,7 @@ public class PaymentOrder(IUnitOfWork unitOfWork, IPaymentServer paymentServer, 
             .Where(u => u.UserId == iduser)
             .FirstOrDefaultAsync();
         
-        if (!_authService.VerifyPassword(password, user.PaymentPassword)) throw new Exception("Contraseña Correcta");
+        if (!_authService.VerifyPassword(password, user.PaymentPassword)) throw new Exception("Contraseña Incorrecta");
         
         return true;
 

@@ -14,6 +14,7 @@ public static class UserProfileMapper
         ManagerDni = domain.ManagerDni,
         ManagerEmail = domain.ManagerEmail,
         Phone = domain.Phone,
-        Address = domain.Address
+        Address = domain.Address,
+        PaymentPassword =  domain.PaymentPasswordHash
     };
 }
