@@ -11,8 +11,11 @@ public class UserProfileDomain
     public string ManagerEmail { get; }
     public string? Phone { get; }
     public string? Address { get; }
+    
+    public string PaymentPasswordHash { get; }
+    
 
-    public UserProfileDomain(int id, int userId, string? name, string? ruc, string? managerName, string? managerDni, string managerEmail, string? phone, string? address)
+    public UserProfileDomain(int id, int userId, string? name, string? ruc, string? managerName, string? managerDni, string managerEmail, string? phone, string? address, string paymentPasswordHash)
     {
         Id = id;
         UserId = userId;
@@ -23,5 +26,6 @@ public class UserProfileDomain
         ManagerEmail = managerEmail;
         Phone = phone;
         Address = address;
+        PaymentPasswordHash = paymentPasswordHash;
     }
 }

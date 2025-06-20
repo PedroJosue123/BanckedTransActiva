@@ -10,11 +10,11 @@ namespace TransActiva.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
-public class BuyerController (IOrder order, IPaymentOrder paymentOrder) : ControllerBase
+public class BuyerController (IOrder order, IPaymentOrder paymentOrder, ISendOrder sendOrder) : ControllerBase
 {
    
     [Authorize(Roles = "Comprador")]
-    [HttpPost("Comprador")]
+    [HttpPost("RegistrarPedido")]
     public async Task<IActionResult> Login([FromBody] RegisterOrderRequestDto registerOrderRequestDto)
     {
         try
@@ -36,12 +36,34 @@ public class BuyerController (IOrder order, IPaymentOrder paymentOrder) : Contro
     }
     
     [Authorize(Roles = "Comprador")]
-    [HttpGet("VersOrdenAceptada{id}")]
-    public async Task<IActionResult> VersiPago(int id)
+    [HttpPost("ComprobarContraseñaparaPago")]
+    public async Task<IActionResult> ComprobarContraseña([FromBody] PaymentPasswordDto paymentPasswordDto)
     {
         try
         {
-            var registro = await order.VerSiOrderAceptado(id);
+            var userIdClaim = User.FindFirst(ClaimTypes.NameIdentifier);
+            if (userIdClaim == null)
+                return Unauthorized("No se encontró el ID de usuario en el token.");
+
+            int userId = int.Parse(userIdClaim.Value);
+            var registro = await paymentOrder.VerificationPaymentPassword(userId, paymentPasswordDto.PaymentPassword);
+            return Ok (registro);
+            
+        }
+        
+        catch (Exception ex)
+        {
+            return NotFound(new { message = ex.Message });
+        }
+    }
+    
+    [Authorize(Roles = "Comprador")]
+    [HttpGet("VerSifueAceptado/{idPedido}")]
+    public async Task<IActionResult> VersiPago(int idPedido)
+    {
+        try
+        {
+            var registro = await order.VerSiOrderAceptado(idPedido);
             return Ok (new { Idpedido = registro });
             
         }
@@ -53,13 +75,13 @@ public class BuyerController (IOrder order, IPaymentOrder paymentOrder) : Contro
     }
     
     [Authorize(Roles = "Comprador")]
-    [HttpPost("VistaPagar")]
-    public async Task<IActionResult> GetPayment(int id)
+    [HttpGet("VerVistaPago/{idPedido}")]
+    public async Task<IActionResult> GetPayment(int idPedido)
     {
         try
         {
-            var registro = await paymentOrder.GeyDataPayment(id);
-            return Ok (new { registered = registro });
+            var registro = await paymentOrder.GeyDataPayment(idPedido);
+            return Ok ( registro );
             
         }
         
@@ -76,7 +98,7 @@ public class BuyerController (IOrder order, IPaymentOrder paymentOrder) : Contro
         try
         {
             var registro = await paymentOrder.Payment(id, paymentCartDto);
-            return Ok (new {registro });
+            return Ok (registro);
             
         }
         
@@ -100,7 +122,7 @@ public class BuyerController (IOrder order, IPaymentOrder paymentOrder) : Contro
             int userId = int.Parse(userIdClaim.Value);
 
             var registro = await order.MostrarOrder(userId);
-            return Ok (new {registro });
+            return Ok (registro);
             
         }
         
@@ -109,5 +131,72 @@ public class BuyerController (IOrder order, IPaymentOrder paymentOrder) : Contro
             return NotFound(new { message = ex.Message });
         }
     }
+    [Authorize(Roles = "Comprador")]
+    [HttpGet("ListapedidosPreparados")]
+    public async Task<IActionResult> ListapedidosPreparados()
+    
+    {
+        try
+        {
+            var userIdClaim = User.FindFirst(ClaimTypes.NameIdentifier);
+            if (userIdClaim == null)
+                return Unauthorized("No se encontró el ID de usuario en el token.");
+
+            int userId = int.Parse(userIdClaim.Value);
+
+            var registro = await order.ListaMostrarPedidosPreparados(userId);
+            return Ok (registro );
+            
+        }
+        
+        catch (Exception ex)
+        {
+            return NotFound(new { message = ex.Message });
+        }
+    }
+    [Authorize(Roles = "Comprador")]
+    [HttpGet("MostarlospedidosPreparados/{idPedido}")]
+    public async Task<IActionResult> MostrarPreparados(int idPedido)
+    
+    {
+        try
+        {
+            var userIdClaim = User.FindFirst(ClaimTypes.NameIdentifier);
+            if (userIdClaim == null)
+                return Unauthorized("No se encontró el ID de usuario en el token.");
+
+            int userId = int.Parse(userIdClaim.Value);
+
+            var registro = await order.MostrarPedidosPreparados(userId , idPedido);
+            return Ok (registro );
+            
+        }
+        
+        catch (Exception ex)
+        {
+            return NotFound(new { message = ex.Message });
+        }
+    }
+    
+    [Authorize(Roles = "Comprador")]
+    [HttpGet("MostarEnvioDePedido/{idPreparacion}")]
+    public async Task<IActionResult> MostrarEnvioPedido(int idPreparacion)
+    
+    {
+        try
+        {
+
+            var registro = await sendOrder.verEnvio(idPreparacion);
+            return Ok (registro );
+            
+        }
+        
+        catch (Exception ex)
+        {
+            return NotFound(new { message = ex.Message });
+        }
+    }
+
+    
     
 }

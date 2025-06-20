@@ -4,12 +4,13 @@ using Domain.Dtos;
 using Domain.Entities;
 using Domain.Interface;
 using Infraestructure.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace Application.CaseUse;
 
 public class SendOrder  (IUnitOfWork unitOfWork) :ISendOrder
 {
-    public async Task<bool> EnviarProducto(int id ,SendProductDto sendProductDto)
+    public async Task<int> EnviarProducto(int id ,SendProductDto sendProductDto)
     {
         var preparacion = await unitOfWork.Repository<Preparacion>().GetByIdAsync(id);
 
@@ -38,7 +39,7 @@ public class SendOrder  (IUnitOfWork unitOfWork) :ISendOrder
             await unitOfWork.SaveChange();
 
             await unitOfWork.CommitTransactionAsync();
-            return true;
+            return (int)preparacion.IdEnvio;
         }
         catch
         {
@@ -53,14 +54,23 @@ public class SendOrder  (IUnitOfWork unitOfWork) :ISendOrder
         var envio = await unitOfWork.Repository<Envio>().GetByIdAsync(id);
         
         
-
-        envio.Estado = true;
+        envio.Llegada = true;
 
 
         await unitOfWork.SaveChange();
         return true;
     }
+    
+    public async Task<GetSendOrderDomain> verEnvio(int id)
+    {
+        var preparacion = await unitOfWork.Repository<Preparacion>().GetAll().
+            Where(u => u.IdPreparacion == id && u.Estado == true).Include(u => u.IdEnvioNavigation).FirstAsync();
 
+
+        var envioDomain = GetSendOrderMapper.ToDomain(preparacion);
+        
+        return envioDomain;
+    }
 
 
 

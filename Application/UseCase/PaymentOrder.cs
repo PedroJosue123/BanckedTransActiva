@@ -9,8 +9,22 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Application.CaseUse;
 
-public class PaymentOrder(IUnitOfWork unitOfWork, IPaymentServer paymentServer) : IPaymentOrder
+public class PaymentOrder(IUnitOfWork unitOfWork, IPaymentServer paymentServer, IAuthService _authService) : IPaymentOrder
 {
+    public async Task<bool> VerificationPaymentPassword(int iduser, string password)
+    {
+        var user = await unitOfWork.Repository<Userprofile>().GetAll()
+            .Where(u => u.UserId == iduser)
+            .FirstOrDefaultAsync();
+        
+        if (!_authService.VerifyPassword(password, user.PaymentPassword)) throw new Exception("Contraseña Correcta");
+        
+        return true;
+
+
+    }
+    
+    
     public async Task<PaymentGetRequestDomain> GeyDataPayment(int id)
     {
         var Pedido = await unitOfWork.Repository<Pedido>().GetAll()

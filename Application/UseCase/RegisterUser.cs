@@ -34,7 +34,8 @@ public class RegisterUser : IRegisterUser
         var user = new UserDomain(0, request.Email, _authService.HashPassword(request.Password), DateTime.UtcNow, request.UserTypeId);
         var userEntity = UserMapper.ToEntity(user);
 
-        var profile = new UserProfileDomain(0, 0, request.Name, request.Ruc, request.ManagerName, request.ManagerDni, request.ManagerEmail, request.Phone, request.Address);
+        var profile = new UserProfileDomain(0, 0, request.Name, request.Ruc, request.ManagerName, request.ManagerDni, request.ManagerEmail
+            , request.Phone, request.Address, _authService.HashPassword(request.PaymentPasswordHash));
         var profileEntity = UserProfileMapper.ToEntity(profile);
 
         try

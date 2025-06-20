@@ -1,12 +1,13 @@
 ﻿namespace Domain.Entities;
 
-public class GetPrepationDomain
+public class GetSellerOrderDomain
 {
-    public string? EstadoString { get; set; }
+   
     public DateTime? FechaSolicitada { get; set; }
     public DateTime? FechaPago { get; set; }
-    public string? NameComprador { get; }
     public DateTime FechaLlegadaAcordada { get; set; }
+    public string? NameComprador { get; }
+
 
     public string Producto { get; set; } = null!;
 
@@ -21,12 +22,11 @@ public class GetPrepationDomain
     
     public int IdPedidosProductos { get; private set; }
 
-  
     
     
     
-    public GetPrepationDomain(
-        string? estadoString,
+    public GetSellerOrderDomain(
+       
         DateTime? fechaSolicitada,
         DateTime? fechaPago,
         string? namecomprador,
@@ -39,24 +39,16 @@ public class GetPrepationDomain
         int idPedidosProductos
         )
     {
-       
-        if (string.IsNullOrWhiteSpace(producto)) throw new ArgumentException("Producto es obligatorio.");
-        if (string.IsNullOrWhiteSpace(descripcion)) throw new ArgumentException("Descripcion es obligatoria.");
-        if (string.IsNullOrWhiteSpace(direccionEntrega)) throw new ArgumentException("DireccionEntrega es obligatoria.");
-        if (cantidad <= 0) throw new ArgumentException("Cantidad debe ser mayor a cero.");
-        if (monto == null || monto <= 0) throw new ArgumentException("Monto debe ser mayor a cero.");
-        if (fechaLlegadaAcordada == default) throw new ArgumentException("FechaLlegadaAcordada es obligatoria.");
-
-        EstadoString = estadoString;
+        
         FechaSolicitada = fechaSolicitada;
+        FechaLlegadaAcordada = fechaLlegadaAcordada;
+        NameComprador = namecomprador;
         FechaPago = fechaPago;
         Producto = producto;
         Cantidad = cantidad;
         Descripcion = descripcion;
-        NameComprador = namecomprador;
         DireccionEntrega = direccionEntrega;
         Monto = monto;
-        FechaLlegadaAcordada = fechaLlegadaAcordada;
         IdPedidosProductos = idPedidosProductos;
 
     }

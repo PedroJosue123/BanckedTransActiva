@@ -18,19 +18,19 @@ public class GetPreparationOrderMapper
 
         if (estadoEnviado && estadoEntregado)
         {
-            estadoString = "Producto Enviado e integrado";
+            estadoString = "Producto Enviado y entegrado";
         }
         else if (!estadoEntregado && estadoEnviado)
         {
             
-            estadoString = "Pedido enviado";
+            estadoString = "Pedido enviado ";
         }
         else
         {
             estadoString = "No se ah preparado";
         }
 
-        return new GetPreparationOrderDomain (estadoString, entity.IdPedidosProductosNavigation.Producto, entity.IdPedidosProductosNavigation.Cantidad,
+        return new GetPreparationOrderDomain (entity.IdPedidosProductosNavigation.IdPreparacionNavigation.IdPreparacion,estadoString, entity.IdPedidosProductosNavigation.Producto, entity.IdPedidosProductosNavigation.Cantidad,
             entity.IdPedidosProductosNavigation.IdPreparacionNavigation.ComoEnvia, entity.IdPedidosProductosNavigation.IdPreparacionNavigation.Detalles
            
         );

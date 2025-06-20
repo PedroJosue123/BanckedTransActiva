@@ -1,7 +1,7 @@
 {
   "format": 1,
   "restore": {
-    "E:\\tecsup\\6to_semestre\\Desarrollo de aplicaciones Avanzado\\Proyectos\\TransActiva\\infraestructure\\Infraestructure.csproj": {}
+    "E:\\tecsup\\6to_semestre\\Desarrollo de aplicaciones Avanzado\\Proyectos\\TransActiva\\Infraestructure\\Infraestructure.csproj": {}
   },
   "projects": {
     "E:\\tecsup\\6to_semestre\\Desarrollo de aplicaciones Avanzado\\Proyectos\\TransActiva\\Domain\\Domain.csproj": {
@@ -57,14 +57,14 @@
         }
       }
     },
-    "E:\\tecsup\\6to_semestre\\Desarrollo de aplicaciones Avanzado\\Proyectos\\TransActiva\\infraestructure\\Infraestructure.csproj": {
+    "E:\\tecsup\\6to_semestre\\Desarrollo de aplicaciones Avanzado\\Proyectos\\TransActiva\\Infraestructure\\Infraestructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\tecsup\\6to_semestre\\Desarrollo de aplicaciones Avanzado\\Proyectos\\TransActiva\\infraestructure\\Infraestructure.csproj",
+        "projectUniqueName": "E:\\tecsup\\6to_semestre\\Desarrollo de aplicaciones Avanzado\\Proyectos\\TransActiva\\Infraestructure\\Infraestructure.csproj",
         "projectName": "Infraestructure",
-        "projectPath": "E:\\tecsup\\6to_semestre\\Desarrollo de aplicaciones Avanzado\\Proyectos\\TransActiva\\infraestructure\\Infraestructure.csproj",
+        "projectPath": "E:\\tecsup\\6to_semestre\\Desarrollo de aplicaciones Avanzado\\Proyectos\\TransActiva\\Infraestructure\\Infraestructure.csproj",
         "packagesPath": "C:\\Users\\AVATECC\\.nuget\\packages\\",
-        "outputPath": "E:\\tecsup\\6to_semestre\\Desarrollo de aplicaciones Avanzado\\Proyectos\\TransActiva\\infraestructure\\obj\\",
+        "outputPath": "E:\\tecsup\\6to_semestre\\Desarrollo de aplicaciones Avanzado\\Proyectos\\TransActiva\\Infraestructure\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\AVATECC\\AppData\\Roaming\\NuGet\\NuGet.Config"

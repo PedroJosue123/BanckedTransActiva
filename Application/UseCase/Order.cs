@@ -67,30 +67,45 @@ public class Order  (IUnitOfWork unitOfWork)  : IOrder
         
     }
 
-    public async Task<List<GetPrepationDomain>> GetPreparationOrder(int id)
+    public async Task<List<GetListPrepationDomain>> ListGetPreparationOrder(int id)
     {
        
            
         var pedido = await unitOfWork.Repository<Pedido>()
             .GetAll()
+            .Where(u => u.IdProveedor == id && u.IdPedidosProductosNavigation.IdPagoNavigation.Estado == true)
+            .Include(p => p.IdCompradorNavigation.Userprofile)
             .Include(p => p.IdPedidosProductosNavigation)
-            .ThenInclude(pp => pp.IdPagoNavigation.Monto)
-            .Include(p => p.IdPedidosProductosNavigation)
-            .ThenInclude(pp => pp.IdPreparacionNavigation)
-            .ThenInclude(prep => prep.IdEnvioNavigation) // Muy importante
-            .Include(p => p.IdCompradorNavigation)
-            .ThenInclude(c => c.Userprofile)
-            .Where(u => u.IdProveedor == id)
+            .Include(p => p.IdPedidosProductosNavigation.IdPreparacionNavigation)
+            .ThenInclude(pp=> pp.IdEnvioNavigation)
             .ToListAsync();
-
         
         if (!pedido.Any()) throw new Exception("No hay ni mierda");
-        var pedidosDominio = pedido.Select(p => GetPreparationMapper.ToDomain(p)).ToList();
+        var pedidosDominio = pedido.Select(p => GetListPreparationMapper.ToDomain(p)).ToList();
 
         return pedidosDominio;
     }
+    
+    public async Task<GetSellerOrderDomain> GetProveedorPreparationOrder(int idPedidosProducto)
+    {
 
-    public async Task<bool> PreparetedOrder(int id, PreparationOrderDto preparationOrderDto)
+
+        var pedido = await unitOfWork.Repository<Pedido>()
+            .GetAll()
+            .Where(u => u.IdPedidosProductos == idPedidosProducto)
+            .Include(p => p.IdCompradorNavigation.Userprofile)
+            .Include(p => p.IdPedidosProductosNavigation)
+            .ThenInclude(pp => pp.IdPagoNavigation).FirstAsync();
+           
+        
+        if (pedido == null) throw new Exception("No hay ni mierda");
+        var pedidosDominio = GetSellerOrderMapper.ToDomain(pedido);
+        return pedidosDominio;
+    }
+    
+    
+
+    public async Task<int> PreparetedOrder(int id, PreparationOrderDto preparationOrderDto)
     {
 
         var preparacion = new PreparationOrderDomain(0 ,preparationOrderDto.ComoEnvia ,preparationOrderDto.Detalles);
@@ -108,7 +123,7 @@ public class Order  (IUnitOfWork unitOfWork)  : IOrder
 
         await unitOfWork.SaveChange();
 
-        return true;
+        return (int)pediproducto.IdPreparacion;
 
     }
 
@@ -143,16 +158,31 @@ public class Order  (IUnitOfWork unitOfWork)  : IOrder
 
 
 
-    public async Task<List<GetPreparationOrderDomain>>  MostrarPedidosPreparados(int id)
+    public async Task<GetPreparationOrderDomain>  MostrarPedidosPreparados(int idComprador, int idPedido)
     {
         var pedidosPreparados = await unitOfWork.Repository<Pedido>()
-            .GetAll().Where(u => u.IdProveedor == id && u.IdPedidosProductosNavigation.IdPreparacionNavigation.Estado == true )
-            .Include(p => p.IdPedidosProductosNavigation.IdPreparacionNavigation).ToListAsync();
+            .GetAll().Where(u => u.IdComprador == idComprador && u.IdPedido == idPedido )
+            .Include(p => p.IdPedidosProductosNavigation.IdPreparacionNavigation.IdEnvioNavigation).FirstAsync();
         
-        if (!pedidosPreparados.Any()) throw new Exception("No hay nada");
-        var pedidosDominio = pedidosPreparados.Select(p => GetPreparationOrderMapper.ToDomain(p)).ToList();
+        if (pedidosPreparados == null) throw new Exception("No hay nada");
+        var pedidosDominio = GetPreparationOrderMapper.ToDomain(pedidosPreparados);
 
         return pedidosDominio;
+    }
+    
+    public async Task<List<GetListPreparationOrderDomain>>  ListaMostrarPedidosPreparados(int idComprador)
+    {
+        var ListapedidosPreparados = await unitOfWork.Repository<Pedido>()
+            .GetAll().Where(u => u.IdComprador == idComprador && u.IdPedidosProductosNavigation.IdPreparacionNavigation.Estado == true )
+            .Include(p => p.IdPedidosProductosNavigation)
+            .ThenInclude(uu => uu.IdPreparacionNavigation.IdEnvioNavigation).ToListAsync();
+          
+              
+        if (!ListapedidosPreparados.Any()) throw new Exception("No hay nada");
+        var listapedidosDominio = ListapedidosPreparados.Select(p => GetListPreparationOrderMapper
+            .ToDomain(p)).ToList();
+
+        return listapedidosDominio;
     }
 
 }

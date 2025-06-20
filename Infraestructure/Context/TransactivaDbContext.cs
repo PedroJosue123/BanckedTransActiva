@@ -223,6 +223,9 @@ public partial class TransactivaDbContext : DbContext
             entity.Property(e => e.ManagerEmail).HasMaxLength(150);
             entity.Property(e => e.ManagerName).HasMaxLength(100);
             entity.Property(e => e.Name).HasMaxLength(100);
+            entity.Property(e => e.PaymentPassword)
+                .HasMaxLength(255)
+                .HasColumnName("Payment_password");
             entity.Property(e => e.Phone).HasMaxLength(20);
             entity.Property(e => e.Ruc).HasMaxLength(11);
             entity.Property(e => e.UserId).HasColumnType("int(11)");

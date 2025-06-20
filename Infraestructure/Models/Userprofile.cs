@@ -23,5 +23,7 @@ public partial class Userprofile
 
     public string? Address { get; set; }
 
+    public string PaymentPassword { get; set; } = null!;
+
     public virtual User User { get; set; } = null!;
 }
